@@ -1,0 +1,35 @@
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="babel.js"></script>
+
+<div id="root"></div>
+
+<script type="text/babel">
+  const App = () => {
+    return (
+      <div>
+        <Player name="Sachin" loc="Mumbai" />
+        <Player name="Dhoni" loc="Ranchi" />
+        <Player name="Kohli" loc="Delhi" />
+      </div>
+    );
+  };
+
+  //   const Player = ({name, loc}) => {
+  //     return (
+  //       <div>
+  //         I'm {name}, I'm from {loc}
+  //       </div>
+  //     );
+  //   };
+
+  const Player = (data) => {
+    return (
+      <div>
+        I'm {data.name}, I'm from {data.loc}
+      </div>
+    );
+  };
+
+  ReactDOM.render(<App />, document.querySelector("#root"));
+</script>

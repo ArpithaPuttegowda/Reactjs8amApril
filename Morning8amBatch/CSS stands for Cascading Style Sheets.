@@ -1,0 +1,62 @@
+CSS stands for Cascading Style Sheets.
+Using CSS, we can control the way of display HTML elements in browser.
+If you want to see the applied styles to the element, open developer window(by inspect or click on f12), click on elements tab, click one of element and see the styles in the right side to that element.
+We can apply the styles to elements, in the form of properties, like key value pairs.
+CSS always tells the behavior of elements.
+Browser always reads your CSS and format your elements accordingly
+We can apply styles in three ways.
+Inline
+Internal
+External
+
+
+selector{
+    property
+    key:value;
+    color:red
+}
+
+Priority
+inline->internal->External
+
+
+Positions
+static Position
+
+if you want to apply left,right, botton and top then we can go with Positions
+
+1.Absolute
+2.Relative
+3.Fixed
+4.sticky
+
+
+1.Absolute-> *it will remove space from the DOM
+* it will change the behavior(block level - inline element, inline-inline)
+*left, right, bottom and top
+*it will take parent as a reference only if the parent is having position other than static
+
+2.Relative->
+*it will not remove space from the DOM
+*it will not change the behavior(not changing from block to inline)
+*can able to apply left, right , bottom and top
+*it will take current position as reference to move
+
+3.Fixed
+
+* it will change the behavior
+*it will remove space from the DOM
+*we can apply left, right , bottom and top
+*it will take viewport(visibility area as a reference) as a reference
+
+4.sticky
+
+*it will not remove space from the DOM
+*it will not change the behavior(not changing from block to inline)
+*can able to apply left, right , bottom and top
+*it will take viewport(visibility area as a reference) as a reference
+
+
+Javascript selectors
+
+document

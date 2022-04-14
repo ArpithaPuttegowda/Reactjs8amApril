@@ -1,0 +1,52 @@
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="babel.js"></script>
+
+<div id="root"></div>
+
+<script type="text/babel">
+  class App extends React.Component {
+    constructor() {
+      super();
+      console.log(this);
+      this.state = {
+        sum: 1000,
+        name: "Sachin"
+      };
+    }
+    handleSum = () => {
+      //   let n1 = document.querySelectorAll("input")[0].value;
+      //   let n2 = document.querySelectorAll("input")[1].value;
+      let n1 = this.refs.n1.value;
+      let n2 = this.refs.n2.value;
+      let name = this.refs.name.innerText;
+      alert(name);
+      let res = Number(n1) + parseInt(n2);
+      this.setState({
+        sum: res,
+        name: "DHONI"
+      });
+    };
+    render() {
+      return (
+        <div>
+          <p>
+            <b>N1:</b>
+            <input ref="n1" />
+          </p>
+          <p>
+            <b>N2:</b>
+            <input ref="n2" />
+          </p>
+          <p>
+            <input type="button" value="Sum" onClick={this.handleSum} />
+          </p>
+          <h1 ref="name">{this.state.sum}</h1>
+          <h1>{this.state.name}</h1>
+        </div>
+      );
+    }
+  }
+
+  ReactDOM.render(<App />, document.querySelector("#root"));
+</script>

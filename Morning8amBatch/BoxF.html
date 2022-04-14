@@ -1,0 +1,49 @@
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="babel.js"></script>
+
+<div id="root"></div>
+
+<script type="text/babel">
+  function Box(p) {
+    const dimension = "100px";
+    return (
+      <div
+        style={{
+          border: "1px solid blue",
+          height: dimension,
+          width: dimension,
+          display: "inline-block",
+          fontSize: dimension,
+          fontWeight: "bold"
+        }}
+      >
+        {p.data}
+      </div>
+    );
+  }
+
+  function App() {
+    return (
+      <div>
+        <div>
+          <Box data="1" name="sachin" />
+          <Box data="2" />
+          <Box data="3" />
+        </div>
+        <div>
+          <Box />
+          <Box />
+          <Box />
+        </div>
+        <div>
+          <Box />
+          <Box />
+          <Box />
+        </div>
+      </div>
+    );
+  }
+
+  ReactDOM.render(<App />, document.getElementById("root"));
+</script>

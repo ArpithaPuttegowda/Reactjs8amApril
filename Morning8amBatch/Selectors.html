@@ -1,0 +1,56 @@
+<style>
+  /* tag name selector */
+  div {
+    color: rgb(144, 47, 255);
+  }
+  /* universal selector */
+  * {
+    font-family: "Courier New", Courier, monospace;
+    font-style: italic;
+  }
+  /* id selector */
+  #mySpan {
+    color: rgb(47, 255, 47);
+  }
+  /* className selector */
+  .fontBold {
+    font-weight: bold;
+  }
+  .colrPink {
+    color: indigo;
+  }
+  /* sibling selector, + selector */
+  div + h2 {
+    color: orange;
+  }
+  b ~ div,
+  p,
+  h1 {
+    color: orangered;
+  }
+</style>
+
+<div>Raina</div>
+<h2>UV</h2>
+<span id="mySpan"> Dhoni </span>
+<div class="fontBold">Sachin</div>
+<p class="fontBold">Kohli</p>
+<h1>PANTH</h1>
+<div>Dravid</div>
+<h2>Virat</h2>
+<span>Rahul</span>
+<p class="fontBold colrPink">ST</p>
+<h2 id="goutham">Goutham</h2>
+<b>Colors</b>
+<div>Red</div>
+<p>Blue</p>
+<h1>Pink</h1>
+<div>Green</div>
+<button onclick="handleClick()">Click me</button>
+
+<script>
+  function handleClick() {
+    let myRef = document.getElementById("goutham");
+    myRef.style.color = "blue";
+  }
+</script>

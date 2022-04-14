@@ -1,0 +1,31 @@
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="babel.js"></script>
+
+<div id="root"></div>
+
+<script type="text/babel">
+  class Player extends React.Component {
+    render() {
+      console.log(this, "current object");
+      return (
+        <h1>
+          I'm {this.props.name} , My location {this.props.loc}
+        </h1>
+      );
+    }
+  }
+  class App extends React.Component {
+    render() {
+      return (
+        <div>
+          <Player name="Sachin" loc="Mumbai" />
+          <Player name="Dhoni" loc="Ranchi" />
+          <Player name="Kohli" loc="Delhi" />
+        </div>
+      );
+    }
+  }
+
+  ReactDOM.render(<App />, document.querySelector("#root"));
+</script>

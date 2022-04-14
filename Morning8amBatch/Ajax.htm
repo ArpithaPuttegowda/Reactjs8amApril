@@ -1,0 +1,27 @@
+<button onclick="handleClick()">Click me</button>
+<h1 id="sample"></h1>
+
+<script>
+  function handleClick() {
+    let res;
+    let obj = new XMLHttpRequest();
+    obj.open("get", "https://jsonplaceholder.typicode.com/posts");
+    obj.send();
+    obj.onload = () => {
+      res = obj.responseText;
+      res = JSON.parse(res);
+      console.log(res, "inside");
+      let sample = document.getElementById("sample");
+      sample.innerText = res[0].title;
+    };
+    // obj.onload=function(){
+
+    // }
+    obj.onerror = () => {
+      res = obj.responseText;
+      alert("Something went wrong, can you please connect with support team");
+      console.log("something", "onError");
+    };
+    console.log(res, "responseout of scope");
+  }
+</script>
