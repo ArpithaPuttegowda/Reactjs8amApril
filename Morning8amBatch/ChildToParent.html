@@ -1,0 +1,57 @@
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="babel.js"></script>
+
+<div id="root"></div>
+
+<script type="text/babel">
+  class Parent extends React.Component {
+    constructor() {
+      super();
+      this.state = {
+        myName: ""
+      };
+    }
+    getData = (data) => {
+      alert("you are calling fn but internallly it's calling getData");
+      alert(data);
+      this.setState({
+        myName: data
+      });
+    };
+    render() {
+      return (
+        <div>
+          Parent::
+          <Child fn={this.getData} />
+          <h1>{this.state.myName}::::coming from Child</h1>
+        </div>
+      );
+    }
+  }
+
+  class Child extends React.Component {
+    constructor() {
+      super();
+      this.name = "Sachin";
+    }
+    handleClick = () => {
+      this.props.fn(this.name);
+    };
+    render() {
+      return (
+        <div>
+          <h1>Child</h1>
+          <button onClick={this.handleClick}>
+            Click me to send data from Child to Parent
+          </button>
+        </div>
+      );
+    }
+  }
+
+  //   const Child = ({name}) => {
+  //     return <h1>{name}</h1>;
+  //   };
+  ReactDOM.render(<Parent />, document.getElementById("root"));
+</script>

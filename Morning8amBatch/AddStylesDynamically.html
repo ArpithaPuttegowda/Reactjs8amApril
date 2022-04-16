@@ -1,6 +1,17 @@
 <script src="react.development.js"></script>
 <script src="react-dom.development.js"></script>
 <script src="babel.js"></script>
+<style>
+  .cr {
+    color: red;
+  }
+  .cg {
+    color: green;
+  }
+  .cb {
+    color: blue;
+  }
+</style>
 
 <div id="root"></div>
 
@@ -10,8 +21,9 @@
       super();
       console.log(this);
       this.state = {
-        sum: 1000,
-        name: "Sachin"
+        sum: 0,
+        name: "Sachin",
+        cls: "cb"
       };
     }
     handleSum = () => {
@@ -20,11 +32,11 @@
       let n1 = this.refs.n1.value;
       let n2 = this.refs.n2.value;
       let name = this.refs.name.innerText;
-      alert(name);
       let res = Number(n1) + parseInt(n2);
       this.setState({
         sum: res,
-        name: "DHONI"
+        name: "DHONI",
+        cls: res > 100 ? "cr" : "cg"
       });
     };
     render() {
@@ -41,7 +53,18 @@
           <p>
             <input type="button" value="Sum" onClick={this.handleSum} />
           </p>
-          <h1 ref="name">{this.state.sum}</h1>
+          <h1 ref="name" style={{color: this.state.sum > 100 && "blue"}}>
+            {this.state.sum}
+          </h1>
+          <h1
+            ref="name"
+            style={{color: this.state.sum > 100 ? "red" : "green"}}
+          >
+            {this.state.sum}
+          </h1>
+          <h1 ref="name" className={this.state.cls}>
+            {this.state.sum}
+          </h1>
           <h1>{this.state.name}</h1>
         </div>
       );
