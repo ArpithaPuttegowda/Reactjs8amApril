@@ -1,0 +1,33 @@
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="babel.js"></script>
+
+<div id="root"></div>
+
+<script type="text/babel">
+  const Parent = () => {
+    //hooks
+    const [name, setName] = React.useState("");
+    const getData = (d) => {
+      alert(d);
+      setName(d);
+    };
+    return (
+      <div>
+        Parent....
+        <h1>
+          <Child fn={getData} />
+        </h1>
+        <h1>I'm {name}.....coming from Child</h1>
+      </div>
+    );
+  };
+
+  const Child = ({fn}) => {
+    const myData = "Ganguly";
+    fn(myData);
+    return <div>Child....</div>;
+  };
+
+  ReactDOM.render(<Parent />, document.getElementById("root"));
+</script>
