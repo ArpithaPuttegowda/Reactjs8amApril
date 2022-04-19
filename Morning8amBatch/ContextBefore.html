@@ -1,0 +1,36 @@
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="babel.js"></script>
+
+<div id="root"></div>
+
+<script type="text/babel">
+  class App extends React.Component {
+    render() {
+      const data = {name: "Mumbai"};
+      return <A name={data.name} />;
+    }
+  }
+
+  class A extends React.Component {
+    render() {
+      return (
+        <div>
+          <B n={this.props.name} />
+        </div>
+      );
+    }
+  }
+
+  class B extends React.Component {
+    render() {
+      return <C data={this.props.n} />;
+    }
+  }
+  class C extends React.Component {
+    render() {
+      return <div>I'm C:::{this.props.data}</div>;
+    }
+  }
+  ReactDOM.render(<App />, document.getElementById("root"));
+</script>

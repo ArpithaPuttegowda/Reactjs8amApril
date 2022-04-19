@@ -32,10 +32,11 @@
   }
 
   class A extends React.Component {
-    constructor(props) {
-      super(props);
+    constructor(p) {
+      super(p);
       const name = "Hyderabad";
       console.log(this, "current object");
+      // p.getData(name);
       this.props.getData(name);
     }
     render() {

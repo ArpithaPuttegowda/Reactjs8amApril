@@ -1,0 +1,55 @@
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="babel.js"></script>
+
+<div id="root"></div>
+
+<script type="text/babel">
+  let ctx = React.createContext();
+  class App extends React.Component {
+    render() {
+      const data = {name: "Mumbai", id: 123};
+      return (
+        <ctx.Provider value={data}>
+          <A />
+        </ctx.Provider>
+      );
+    }
+  }
+  class A extends React.Component {
+    render() {
+      console.log(this, "**", this.context);
+      return (
+        <div>
+          I'm A:::::: {this.context.name}
+          <B />
+        </div>
+      );
+    }
+  }
+  A.contextType = ctx;
+
+  class B extends React.Component {
+    render() {
+      console.log(this, "B", this.context);
+      return (
+        <div>
+          <h1>
+            I'm B:::::<ctx.Consumer>{(data) => data.name}</ctx.Consumer>
+          </h1>
+          <C />
+        </div>
+      );
+    }
+  }
+  class C extends React.Component {
+    render() {
+      return (
+        <div>
+          I'm C:::<ctx.Consumer>{(data) => data.name}</ctx.Consumer>
+        </div>
+      );
+    }
+  }
+  ReactDOM.render(<App />, document.getElementById("root"));
+</script>
