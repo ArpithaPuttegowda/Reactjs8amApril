@@ -1,0 +1,5 @@
+npm i -g create-react-component
+npm create-react-component Header
+
+OR
+npx create-react-component Header

@@ -1,0 +1,12 @@
+.footer {
+  background: blue;
+  color: white;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+  font-family: cursive;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 10px;
+}
