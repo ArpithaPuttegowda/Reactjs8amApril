@@ -1,9 +1,15 @@
 import {Component} from "react";
-import RefReact18 from "./ComponentsNew/RefReact18";
+import ReactCreateRef from "./Component/ReactCreateRef";
+import RefReact18 from "./Component/RefReact18";
 
 class App extends Component {
   render() {
-    return <RefReact18 />;
+    return (
+      <>
+        <RefReact18 />
+        <ReactCreateRef />
+      </>
+    );
   }
 }
 
