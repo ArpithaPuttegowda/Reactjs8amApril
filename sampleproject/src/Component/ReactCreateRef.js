@@ -8,13 +8,13 @@ export default class ReactCreateRef extends Component {
       data: ""
     };
   }
-  handleData() {
+  handleData = () => {
     console.log(this, "***");
     let val = this.reference.current.value;
     this.setState({
       data: val
     });
-  }
+  };
   render() {
     return (
       <div>
