@@ -2,6 +2,7 @@ import {Component} from "react";
 import Parent from "./Component/ForwardingREf";
 import GetElementRefOnChange from "./Component/getElementRefOnChange";
 import ListKeys from "./Component/ListKeys";
+import ListKeys1 from "./Component/ListKeys1";
 import ReactCreateRef from "./Component/ReactCreateRef";
 import RefReact18 from "./Component/RefReact18";
 import SetState1 from "./Component/SetState1";
@@ -20,6 +21,7 @@ class App extends Component {
         {/* <SetState2 /> */}
         {/* <SetState3 /> */}
         <ListKeys />
+        <ListKeys1 />
       </>
     );
   }
