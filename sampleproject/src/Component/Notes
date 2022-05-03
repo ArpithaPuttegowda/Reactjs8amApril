@@ -1,0 +1,18 @@
+Life Cycle methods.
+Phases
+1.Mounting
+constructor(),render(),static getDerivedStateFromProps(),componentDidMount()
+
+2.Updating
+static getDerivedStateFromProps(),shouldComponentUpdate(),render(),getSnapshotBeforeUpdate()
+componentDidUpdate()
+
+3.UnMounting
+componentWillUnMount()
+
+
+4.Exception Handling
+static getDerviredStateFromError()
+componentDidCatch()
+
+
