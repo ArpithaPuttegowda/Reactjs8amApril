@@ -1,6 +1,8 @@
 import {Component, useImperativeHandle} from "react";
 import Parent from "./Component/ForwardingREf";
 import GetElementRefOnChange from "./Component/getElementRefOnChange";
+import LifeCycleMethods from "./Component/LifeCycleMethods";
+import LifeCycleMethods1 from "./Component/LifeCycleMethodsUpdating";
 import ListKeys2 from "./Component/ListAndKeys2";
 import ListKeys from "./Component/ListKeys";
 import ListKeys1 from "./Component/ListKeys1";
@@ -22,16 +24,18 @@ class App extends Component {
         {/* <ReactCreateRef /> */}
         {/* <Parent /> */}
         {/* <GetElementRefOnChange /> */}
-        <SetState1 />
+        {/* <SetState1 /> */}
         {/* <SetState2 /> */}
         {/* <SetState3 /> */}
         {/* <ListKeys />
         <ListKeys1 /> */}
         {/* <FancyInput /> */}
-        {this.state.loadComp && <ListKeys2 />}
+        {/* {this.state.loadComp && <ListKeys2 />}
         <button onClick={() => this.setState({loadComp: false})}>
           Click me
-        </button>
+        </button> */}
+        {/* <LifeCycleMethods /> */}
+        <LifeCycleMethods1 />
       </>
     );
   }
