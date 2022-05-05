@@ -15,8 +15,16 @@ import FancyInput from "./Component/UseImperative";
 
 class App extends Component {
   state = {
-    loadComp: true
+    loadComp: true,
+    name: "sachin"
   };
+
+  getName = (data) => {
+    this.setState({
+      name: data
+    });
+  };
+
   render() {
     return (
       <>
@@ -35,7 +43,11 @@ class App extends Component {
           Click me
         </button> */}
         {/* <LifeCycleMethods /> */}
-        <LifeCycleMethods1 />
+        <LifeCycleMethods1
+          name={this.state.name}
+          loc="Mumbai"
+          getName={this.getName}
+        />
       </>
     );
   }

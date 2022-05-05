@@ -2,25 +2,37 @@ import React, {Component} from "react";
 
 //Mounting Phased and Updating phase
 export default class LifeCycleMethods1 extends Component {
-  constructor() {
+  //mounting
+  constructor(props) {
     super();
-    console.log("constructor executed");
+    console.log("constructor executed", props, this.props);
     this.state = {
       count: 0,
       name: "Sachin"
     };
   }
-  static getDerivedStateFromProps() {
+
+  //mounting and updating
+  static getDerivedStateFromProps(nextProps, nextState) {
     console.log("getDerivedStateFromProps");
-    return {
-      //   count: 100,
-      name: "DHONI"
-    };
+    if (nextState.count === 1) {
+      return {
+        count: 100
+      };
+    }
   }
-  shouldComponentUpdate() {
-    console.log("shouldcomponentUpdate");
+
+  // updating
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log("shouldComponentUpdate");
+    // if (nextState.name !== this.state.name) {
+    //   return true;
+    // }
+    // return false;
     return true;
   }
+
+  //mounting and updating
   render() {
     console.log("render executed");
     return (
@@ -32,16 +44,33 @@ export default class LifeCycleMethods1 extends Component {
           Count:{this.state.count}......
           {this.state.name}
         </h1>
+        <button
+          onClick={() => {
+            this.setState({name: "Sachinn"});
+            this.props.getName("Hyderabad");
+          }}
+        >
+          UpdateName
+        </button>
+
+        <h1>my prop:{this.props.name}</h1>
       </div>
     );
   }
-  getSnapshotBeforeUpdate() {
+
+  //updating
+  getSnapshotBeforeUpdate(preProps, preState) {
     console.log("getSnapshotBeforeUpdate");
   }
+
+  //mounting
   componentDidMount() {
     console.log("ComponentDidMount executed");
   }
-  componentDidUpdate() {
+
+  //updating
+  componentDidUpdate(prevProps, prevState) {
+    debugger;
     console.log("componentDidUpdate");
   }
 }
