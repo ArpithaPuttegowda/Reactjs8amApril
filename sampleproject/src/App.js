@@ -12,6 +12,7 @@ import SetState1 from "./Component/SetState1";
 import SetState2 from "./Component/SetState2Cb";
 import SetState3 from "./Component/SetStateCBasFirstArg";
 import FancyInput from "./Component/UseImperative";
+import UnMountingLifeCycle from "./UnMountingLifeCycle";
 
 class App extends Component {
   state = {
@@ -43,11 +44,12 @@ class App extends Component {
           Click me
         </button> */}
         {/* <LifeCycleMethods /> */}
-        <LifeCycleMethods1
+        {/* <LifeCycleMethods1
           name={this.state.name}
           loc="Mumbai"
           getName={this.getName}
-        />
+        /> */}
+        <UnMountingLifeCycle />
       </>
     );
   }
