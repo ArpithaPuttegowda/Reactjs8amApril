@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {Component, Fragment} from "react";
 
 export default class ListKeys extends Component {
   render() {
@@ -23,7 +23,12 @@ export default class ListKeys extends Component {
           })}
         </div>
         {players.map((value, index) => {
-          return <h1 key={value + index}>{value}</h1>;
+          return (
+            <Fragment key={value + index}>
+              <h1>{value}</h1>
+              <h1>Sachin</h1>
+            </Fragment>
+          );
         })}
         <ul>
           {players.map((v, i) => (

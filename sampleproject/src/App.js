@@ -1,4 +1,5 @@
 import {Component, useImperativeHandle} from "react";
+import ExceptionHandling from "./Component/ExceptionHandling2/ExceptionHandling";
 import Parent from "./Component/ForwardingREf";
 import GetElementRefOnChange from "./Component/getElementRefOnChange";
 import LifeCycleMethods from "./Component/LifeCycleMethods";
@@ -7,6 +8,7 @@ import ListKeys2 from "./Component/ListAndKeys2";
 import ListKeys from "./Component/ListKeys";
 import ListKeys1 from "./Component/ListKeys1";
 import ReactCreateRef from "./Component/ReactCreateRef";
+import ReactFragment from "./Component/ReactFragment";
 import RefReact18 from "./Component/RefReact18";
 import SetState1 from "./Component/SetState1";
 import SetState2 from "./Component/SetState2Cb";
@@ -49,7 +51,9 @@ class App extends Component {
           loc="Mumbai"
           getName={this.getName}
         /> */}
-        <UnMountingLifeCycle />
+        {/* <UnMountingLifeCycle /> */}
+        {/* <ExceptionHandling /> */}
+        <ReactFragment />
       </>
     );
   }
