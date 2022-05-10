@@ -1,4 +1,7 @@
 import React, {Component} from "react";
+import ReusalbeListComp from "./ReusualbleComponents/ReusalbeListComp";
+import Button from "./ReusualbleComponents/ReusuableButton";
+import TableResualbeComp from "./ReusualbleComponents/TableResualbeComp";
 
 export default class ListKeys1 extends Component {
   constructor() {
@@ -26,6 +29,16 @@ export default class ListKeys1 extends Component {
             );
           })}
         </table>
+        {/* <Button id="btn1" content="CLICK THIS" />
+        <ReusalbeListComp data={["NTR", "Chiranjivi", "Arjun"]} /> */}
+        <TableResualbeComp
+          headers={["color", "fruit"]}
+          data={[
+            {color: "red", fruit: "Apple"},
+            {color: "orange", fruit: "Orange"}
+          ]}
+          keys={["color", "fruit"]}
+        />
       </div>
     );
   }

@@ -1,4 +1,7 @@
 import React, {Component, Fragment} from "react";
+import ReusalbeListComp from "./ReusualbleComponents/ReusalbeListComp";
+import Button from "./ReusualbleComponents/ReusuableButton";
+import TableResualbeComp from "./ReusualbleComponents/TableResualbeComp";
 
 export default class ListKeys extends Component {
   render() {
@@ -63,6 +66,16 @@ export default class ListKeys extends Component {
             })}
           </select>
         </p>
+        {/* <Button id="btn" content="Click me" />
+        <ReusalbeListComp data={["Sachin", "Dhoni", "Kohli"]} /> */}
+        <TableResualbeComp
+          headers={["Name", "Loc"]}
+          data={[
+            {name: "Sachin", loc: "Mumbai"},
+            {name: "Dhoni", loc: "Ranchi"}
+          ]}
+          keys={["name", "loc"]}
+        />
       </div>
     );
   }

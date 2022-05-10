@@ -38,8 +38,8 @@ class App extends Component {
         {/* <SetState1 /> */}
         {/* <SetState2 /> */}
         {/* <SetState3 /> */}
-        {/* <ListKeys />
-        <ListKeys1 /> */}
+        <ListKeys />
+        <ListKeys1 />
         {/* <FancyInput /> */}
         {/* {this.state.loadComp && <ListKeys2 />}
         <button onClick={() => this.setState({loadComp: false})}>
@@ -53,7 +53,7 @@ class App extends Component {
         /> */}
         {/* <UnMountingLifeCycle /> */}
         {/* <ExceptionHandling /> */}
-        <ReactFragment />
+        {/* <ReactFragment /> */}
       </>
     );
   }
