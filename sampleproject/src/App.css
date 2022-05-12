@@ -36,3 +36,33 @@
     transform: rotate(360deg);
   }
 }
+header {
+  font-weight: bold;
+  background: yellow;
+  color: green;
+  font-size: 20px;
+  font-family: sans-serif;
+  text-align: center;
+  padding: 16px;
+}
+
+footer {
+  font-weight: bold;
+  background: yellow;
+  color: green;
+  font-family: sans-serif;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  text-align: center;
+  padding: 16px;
+}
+#menu {
+  background: yellowgreen;
+  color: white;
+  text-align: right;
+}
+#menu a {
+  padding: 4px;
+  line-height: 21px;
+}
