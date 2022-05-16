@@ -1,0 +1,45 @@
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="babel.js"></script>
+
+<div id="root"></div>
+
+<script type="text/babel">
+  const App = () => {
+    const [count, setCount] = React.useState(0);
+    const [name, setName] = React.useState("Sachin");
+    const handleInc = () => {
+      setCount(count + 1);
+    };
+
+    const handleChangeName = () => {
+      setName("Dhoni");
+    };
+
+    //useEffect like componentDidUpdate
+    React.useEffect(() => {
+      alert("useEffect callled");
+    });
+
+    //useEffect like componentDidUpdate for count change
+    React.useEffect(() => {
+      alert("useEffect will call only when count will change");
+    }, [count]);
+
+    //useEffect like componentDidUpdate for name Change
+    React.useEffect(() => {
+      alert("useEffect will call only when name will change");
+    }, [name]);
+
+    return (
+      <div>
+        <button onClick={handleInc}>Inc Count</button>
+        <button onClick={handleChangeName}>ChangeName</button>
+        <h1>{count}</h1>
+        <h1>{name}</h1>
+      </div>
+    );
+  };
+
+  ReactDOM.render(<App />, document.getElementById("root"));
+</script>

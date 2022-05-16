@@ -22,7 +22,7 @@ export default class Menu extends Component {
               <Route path="/home" element={<Home />} />
               <Route path="/aboutUs" element={<AboutUs />} />
               <Route path="/contactUs" element={<ContactUs />} />
-              <Route path="*" element={<Navigate to="/" />} />
+              <Route path="*" element={<Navigate to="/home" />} />
             </Routes>
           </BrowserRouter>
         </Suspense>

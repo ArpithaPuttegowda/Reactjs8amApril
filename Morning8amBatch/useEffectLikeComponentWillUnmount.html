@@ -1,0 +1,41 @@
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="babel.js"></script>
+
+<div id="root"></div>
+
+<script type="text/babel">
+  const App = () => {
+    const [isChild, setIsChild] = React.useState(true);
+    const handleToggle = () => {
+      setIsChild(!isChild);
+    };
+    return (
+      <div>
+        {isChild && <Child />}
+        <button onClick={handleToggle}>Toggle</button>
+      </div>
+    );
+  };
+
+  const Child = () => {
+    let id;
+    React.useEffect(() => {
+      id = setInterval(() => {
+        console.log("setInterval");
+      }, 5000);
+    }, []);
+
+    React.useEffect(() => {
+      return () => {
+        alert("it will call during unmounting of the component");
+        //componentWillUnmount
+        clearInterval(id);
+      };
+    }, []);
+
+    return <div>This is Child Component</div>;
+  };
+
+  ReactDOM.render(<App />, document.getElementById("root"));
+</script>
