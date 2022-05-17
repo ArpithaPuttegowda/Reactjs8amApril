@@ -1,0 +1,27 @@
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="babel.js"></script>
+
+<div id="root"></div>
+
+<script type="text/babel">
+  const App = () => {
+    const [count, setCount] = React.useState(0);
+    const delay = React.useMemo(() => {
+      for (let i = 0; i <= 5000000000; i++) {}
+      return 10;
+    }, []);
+    const handleInc = () => {
+      setCount(count + 1);
+    };
+    return (
+      <div>
+        <button onClick={handleInc}>Inc count</button>
+        <h1>{count}</h1>
+        <h1>{delay}</h1>
+      </div>
+    );
+  };
+
+  ReactDOM.render(<App />, document.getElementById("root"));
+</script>

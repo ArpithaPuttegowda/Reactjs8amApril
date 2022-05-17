@@ -1,0 +1,32 @@
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="babel.js"></script>
+
+<div id="root"></div>
+
+<script type="text/babel">
+  const App = () => {
+    const myRef = React.useRef(null);
+    const myRef2 = React.useRef(null);
+    const handleClick = () => {
+      myRef.current.value = "Sachin";
+    };
+    return (
+      <div>
+        <button onClick={handleClick}>Click</button>
+        <Child ref={myRef} reference={myRef2} />
+      </div>
+    );
+  };
+
+  const Child = React.forwardRef((prop, r) => {
+    console.log(r, "ref", prop);
+    return (
+      <div>
+        <input ref={r} />
+      </div>
+    );
+  });
+
+  ReactDOM.render(<App />, document.getElementById("root"));
+</script>
