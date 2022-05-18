@@ -1,0 +1,32 @@
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="babel.js"></script>
+
+<div id="root"></div>
+
+<script type="text/babel">
+  const App = () => {
+    const myRef = React.useRef();
+    return (
+      <div>
+        I'm Parent
+        <FancyInput ref={myRef} />
+        <button onClick={() => myRef.current.f1}>Click me</button>
+      </div>
+    );
+  };
+
+  function FancyInput(props, ref) {
+    const inputRef = React.useRef();
+    React.useImperativeHandle(ref, () => ({
+      f1
+    }));
+    const f1 = () => {
+      alert("f1 called");
+    };
+    return <input ref={inputRef} />;
+  }
+  FancyInput = React.forwardRef(FancyInput);
+
+  ReactDOM.render(<App />, document.getElementById("root"));
+</script>

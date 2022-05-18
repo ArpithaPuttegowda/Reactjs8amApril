@@ -1,0 +1,33 @@
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="babel.js"></script>
+
+<div id="root"></div>
+
+<script type="text/babel">
+  const App = () => {
+    const [loc, setLoc] = React.useState("");
+    const [count, setCount] = React.useState(0);
+    const callback = React.useCallback((data) => {
+      setLoc(data);
+    }, []);
+    return (
+      <div>
+        {alert("parent called")}
+        <Child1 cb={callback} />
+        <h1>{loc}</h1>
+        <button onClick={() => setCount(count + 1)}>Count:</button>
+      </div>
+    );
+  };
+
+  const Child = ({cb}) => {
+    alert("child called");
+    const location = "Mumbai";
+    cb(location);
+    return <h1>I'm Child</h1>;
+  };
+
+  const Child1 = React.memo(Child);
+  ReactDOM.render(<App />, document.getElementById("root"));
+</script>
