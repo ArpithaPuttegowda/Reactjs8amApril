@@ -35,10 +35,21 @@
 // export default App;
 
 import React, {Component} from "react";
+import A from "./Components/redux/A";
+import B from "./Components/redux/B";
+import C from "./Components/redux/C";
+import D from "./Components/redux/D";
 
 class App extends Component {
   render() {
-    return <div>App</div>;
+    return (
+      <div>
+        <A />
+        <B />
+        <C />
+        <D />
+      </div>
+    );
   }
 }
 export default App;

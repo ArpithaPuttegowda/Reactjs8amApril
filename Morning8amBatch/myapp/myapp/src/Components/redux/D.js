@@ -1,10 +1,11 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
 
-class C extends Component {
+class D extends Component {
   render() {
     return (
       <div>
+        <h1>I'm D Component</h1>
         <h1>Name:{this.props.n}</h1>
         <h1>Location:{this.props.l}</h1>
       </div>
@@ -20,6 +21,6 @@ const msp = (state) => {
 };
 const mdp = (dispatch) => {};
 
-C = connect(msp, mdp)(C);
+D = connect(msp, mdp)(D);
 
-export default C;
+export default D;

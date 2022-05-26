@@ -1,4 +1,5 @@
 import React, {Component, createRef} from "react";
+import store from "../../store/store";
 
 export default class A extends Component {
   constructor() {
@@ -6,8 +7,12 @@ export default class A extends Component {
     this.myRef = createRef(null);
   }
   handleClick = () => {
+    debugger;
     let name = this.myRef.current.value;
-    this.props.cb(name);
+    store.dispatch({
+      type: "NAME",
+      payload: name
+    });
   };
   render() {
     return (
