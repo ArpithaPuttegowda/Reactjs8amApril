@@ -18,7 +18,11 @@ const msp = (state) => {
     l: state.r.loc
   };
 };
-const mdp = (dispatch) => {};
+const mdp = (dispatch) => {
+  return {
+    d: dispatch
+  };
+};
 
 C = connect(msp, mdp)(C);
 

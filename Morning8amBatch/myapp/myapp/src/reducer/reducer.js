@@ -13,6 +13,12 @@ const reducer = (state = init, action) => {
       loc: action.payload
     };
   }
+  if (action.type === "AJAX") {
+    state = {
+      ...state,
+      data: action.data
+    };
+  }
   console.log(state, "state");
   return state;
 };

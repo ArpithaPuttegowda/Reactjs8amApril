@@ -36,9 +36,11 @@
 
 import React, {Component} from "react";
 import A from "./Components/redux/A";
+import Ajax from "./Components/redux/Ajax";
 import B from "./Components/redux/B";
 import C from "./Components/redux/C";
 import D from "./Components/redux/D";
+import GetDataNew from "./Components/redux/GetData";
 
 class App extends Component {
   render() {
@@ -48,6 +50,8 @@ class App extends Component {
         <B />
         <C />
         <D />
+        <Ajax />
+        <GetDataNew />
       </div>
     );
   }
