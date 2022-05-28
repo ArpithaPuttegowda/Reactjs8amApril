@@ -1,6 +1,7 @@
 const init = {
   name: "",
   loc: "",
-  data: []
+  data: [],
+  comments: []
 };
 export default init;

@@ -19,6 +19,12 @@ const reducer = (state = init, action) => {
       data: action.data
     };
   }
+  if (action.type === "COMMENTS") {
+    state = {
+      ...state,
+      comments: action.payload
+    };
+  }
   console.log(state, "state");
   return state;
 };

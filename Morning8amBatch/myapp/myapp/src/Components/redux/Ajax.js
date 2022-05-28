@@ -3,14 +3,11 @@ import {connect} from "react-redux";
 
 class Ajax extends Component {
   handleAjax = async () => {
-    let res = await fetch("https://jsonplaceholder.typicode.com/posts").then(
-      (res) => {
-        return res.json();
-      }
-    );
+    let res = await fetch("https://jsonplaceholder.typicode.com/posts");
+    let data = await res.json();
     this.props.dispatch({
       type: "AJAX",
-      data: res
+      data
     });
 
     console.log(res, "res");

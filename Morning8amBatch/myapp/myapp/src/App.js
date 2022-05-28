@@ -40,18 +40,22 @@ import Ajax from "./Components/redux/Ajax";
 import B from "./Components/redux/B";
 import C from "./Components/redux/C";
 import D from "./Components/redux/D";
+import FetchCommentsDataFromRedux from "./Components/redux/FetchCommentsDataFromRedux";
+import GetComments from "./Components/redux/GetComments";
 import GetDataNew from "./Components/redux/GetData";
 
 class App extends Component {
   render() {
     return (
       <div>
-        <A />
+        {/* <A />
         <B />
         <C />
         <D />
         <Ajax />
-        <GetDataNew />
+        <GetDataNew /> */}
+        <GetComments />
+        <FetchCommentsDataFromRedux />
       </div>
     );
   }
